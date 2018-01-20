@@ -1,17 +1,30 @@
 {
   "name": "30days-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Hello of the React Community My professional bio [url: \"https://linkedin/in/haojijiu\"]",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcle build .src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hhao99/30days-react.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hhao99/30days-react/issues"
+  },
+  "homepage": "https://github.com/hhao99/30days-react#readme",
   "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^1.12.4",
+    "popper.js": "^1.12.9",
     "react": "^16.2.0",
+    "react-bootstrap": "^0.32.0",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
