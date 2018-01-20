@@ -2,4 +2,4 @@
 ## inspired by 30days-swift [url: https://github.com/allenwong/30DaysofSwift]
 
 ## Hello of the React Community
-My professional bio [uril: "https://linkedin/hhao99"]
+My professional bio [uri: "https://linkedin/in/haojijiu"]
