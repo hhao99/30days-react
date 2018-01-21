@@ -15,9 +15,10 @@ const StopWatch = (props)=> {
     <Grid>
       <Row className='show-grid'>
         <Col xs={6} md={8}>
-          <h1>
+          <h1> Day1: stop watch </h1>
+          <h2>
             <Label bsStyle='primary'>{props.time.toLocaleString()}</Label>
-          </h1>
+          </h2>
 
         </Col>
       </Row>

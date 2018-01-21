@@ -3,3 +3,4 @@ cache
 dist
 *.lock
 *.log
+.cache
