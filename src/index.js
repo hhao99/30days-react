@@ -4,7 +4,7 @@ import bootstrap from 'bootstrap'
 
 import Day1 from './day1/'
 import Day2 from './day2/'
-
+import Day3 from './day3/'
 const App = ()=> {
   console.log('app')
   return(
@@ -12,6 +12,7 @@ const App = ()=> {
       <h1> 30 days of the React </h1>
       <Day1 />
       <Day2 />
+      <Day3 />
     </div>
   )
 }
