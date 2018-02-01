@@ -53,3 +53,54 @@ var [a,,,b] = [1,2,3,4] // a=1, b=4
 var {op,lhs,rhs} = getAsTNode() // op = Node.op
 more info: [MDN destrucring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 ### Default + Rest + Spread
+in the function call, the callee-evaluated default value and the object provide as the array of parameters.
+function f(x,y=12) { return x+y} // f(2) = 14
+function f(x,...y) { return x * y.length}
+
+### Iterators + For..Of
+Like the java iterators, iterator object iterate itself.
+for (var n of items) { }
+
+### Generators
+Generators simplify iterator authoring using the function* and yield,Generator are subtypes of iterators that includes the next and throw key word, those values will flow back the generator.
+### Proxies
+Proxies enable create the object with the full range of the access for the host object, just like the aspect object programming, you can use proxy to define the object logging/profiling etc.
+
+
+// Proxy a normal object
+let target = {}
+  var handler = {
+    get: (receive,name) {
+      return `Hello,${name}`
+    }
+  }
+  let p = new Proxy(target,handler)
+  p.world === 'Hello world!'
+
+  there are traps available for all of the runtime-level method
+
+  var handler =
+{
+  get:...,
+  set:...,
+  has:...,
+  deleteProperty:...,
+  apply:...,
+  construct:...,
+  getOwnPropertyDescriptor:...,
+  defineProperty:...,
+  getPrototypeOf:...,
+  setPrototypeOf:...,
+  enumerate:...,
+  ownKeys:...,
+  preventExtensions:...,
+  isExtensible:...
+}
+
+### Promises
+Asyn programming is the natural in nodejs, and promise simplify the call hell of  the async program.
+
+var p =  timeout(1000).then( ()=> {
+  return timeout(2000)
+  }).then( ()=> throw new Error('timeout'))
+  .catch( err=> console.log(err))
