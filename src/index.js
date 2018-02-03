@@ -7,7 +7,7 @@ import Day2 from './day2/'
 import Day3 from './day3/'
 import Day5 from './day5/'
 const App = ()=> {
-  console.log('app')
+
   return(
     <div className="container">
       <h1> 30 days of the React </h1>

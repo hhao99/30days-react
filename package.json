@@ -22,13 +22,14 @@
   "dependencies": {
     "bootstrap": "^4.0.0",
     "immutable": "^3.8.2",
-    "jquery": "^1.12.4",
+    "jquery": "^3.0.0",
     "popper.js": "^1.12.9",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
