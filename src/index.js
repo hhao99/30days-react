@@ -11,10 +11,7 @@ const App = ()=> {
   return(
     <div className="container">
       <h1> 30 days of the React </h1>
-      <Day1 />
-      <Day2 />
-      <Day3 />
-      <h2> Day4 ES6 recap</h2>
+      
       <Day5 />
     </div>
   )

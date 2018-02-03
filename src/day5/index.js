@@ -2,28 +2,34 @@ import React, { Component } from 'react'
 
 
 
-
-const url = 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=4a172ab437d9871cb95cd47d26676729'
+let city = 'Beijing'
+let url = 'https://api.openweathermap.org/data/2.5/weather?appid=4a172ab437d9871cb95cd47d26676729&q='
 
 class Weather extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: [],
+      data: null,
       msg: 'no msg',
+      city: '',
     }
     this.getWeather = this.getWeather.bind(this)
+    this.queryWeather = this.queryWeather.bind(this)
 
   }
 
-  componentWillMount() {
-    this.getWeather()
+  componentDidMount() {
+  //  this.getWeather(url+city)
   }
-  getWeather() {
-    fetch(url)
+  componentDidCatch(err,info) {
+    this.setState({ hasError: true})
+    this.setState({msg: info})
+    console.log(err,info)
+  }
+  getWeather(url2) {
+    fetch(url2)
     .then( resp => resp.json())
     .then( json=> {
-      console.log(json)
       this.setState({
         data: json,
       })
@@ -34,44 +40,56 @@ class Weather extends React.Component {
     })
   }
 
-  render() {
-    let weather
-    if(this.state.data.weather) {
-      weather = this.state.data.weather[0]
+  queryWeather(e) {
+    e.preventDefault()
+    console.log(this.city.value)
 
-      return (
+    this.getWeather(url+this.city.value)
+  }
+
+  render() {
+    let weatherinfo
+    if(this.state.data) {
+      let weather = this.state.data.weather[0]
+      let main = this.state.data.main
+      let city = this.state.data.name
+      weatherinfo = (
       <div>
         <h2>Day5 Weather </h2>
         <h3>
           <li>
-            name : London
+            name : {city}
           </li>
-
-            <li>
+          <li>
               condition : {weather.main}
-            </li>
-
-              <li>
-                description : {weather.description}
-              </li>
+          </li>
+          <li>
+              description : {weather.description}
+          </li>
         </h3>
-
       </div>
     )
 
   }else{
-    return (
+    weatherinfo =(
       <div>
-        <h2>Day5 Weather App</h2>
         <h4> {this.state.msg} </h4>
       </div>
     )
   }
+  return (
+    <div>
+      {weatherinfo}
+      <form onSubmit={(e)=> this.queryWeather(e)}>
+        <input type='text'
 
-    console.log(this.state.data)
-
-  }
-
+            ref={ input => this.city = input}
+          />
+        <input type='button' value="Query" onClick={this.queryWeather}></input>
+      </form>
+     </div>
+  )
+}
 }
 
 
